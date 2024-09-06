@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Schedule</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 5rem;
+            background-color: rgb(7, 44, 93);
+        }
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 5px;
+            table-layout: fixed; 
+        }
+        th, td {
+            border: 1px solid rgb(255, 255, 255);
+            padding: 10px;
+            text-align: center;
+            background-color: rgb(221, 228, 234);
+        }
+        th {
+            background-color: #1f76da;
+            color: white;
+        }
+        .class-name {
+            font-weight: bold;
+            color: rgb(11, 11, 131); 
+        }
+        
+        .room-number {
+            font-style: italic;
+            color: rgb(0, 0, 0); 
+        }
+        td.course {
+            background-color: aqua;
+        }
+        header{
+            text-align: center;
+            vertical-align: center;
+            color: antiquewhite;
+        }
+        footer{
+            margin: 3rem;
+            color: antiquewhite;
+        }
+        #title{
+            color: rgb(104, 173, 50);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+    <h2 id="title">Class Schedule</h2>
+    <h4> CS 3101 | A.Y. 2024-2025</h4>
+    <p> College of Informatics and Computing Sciences</p>
+    </header>
+
+    <section class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Time</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>07:00 - 07:30</td>
+                <td rowspan="23">&nbsp;</td>
+                <td rowspan="6">&nbsp;</td>
+                <td rowspan="3" class="course"><span class="class-name">MATH 401</span><br><span class="room-number">102</span></td> 
+                <td rowspan="6">&nbsp;</td> 
+                <td rowspan="3" class="course"><span class="class-name">Math 401</span><br><span class="room-number">102</span></td>
+            </tr>
+            
+            <tr>
+                <td>07:30 - 08:00</td>
+            </tr>
+           
+            <tr>
+                <td>08:00 - 08:30</td>
+            </tr>
+           
+            <tr>
+                <td>08:30 - 09:00</td>
+                <td rowspan="3" class="course"><span class="class-name">IT 321</span><br><span class="room-number">102</span></td> 
+                <td rowspan="3" class="course"><span class="class-name">IT 321</span><br><span class="room-number">102</span></td> 
+            </tr>
+           
+            <tr>
+                <td>09:00 - 09:30</td>
+            </tr>
+            
+            <tr>
+                <td>09:30 - 10:00</td>
+            </tr>
+            
+            <tr>
+                <td>10:00 - 10:30</td>
+                <td rowspan="6" class="course"><span class="class-name">IT 331</span><br><span class="room-number">LAB 2</span></td> 
+                <td rowspan="4" class="course"><span class="class-name">IT 331</span><br><span class="room-number">102</span></td> 
+                <td rowspan="4" class="course"><span class="class-name">CS 312</span><br><span class="room-number">SMART</span></td> 
+                <td rowspan="6" class="course"><span class="class-name">IT 312</span><br><span class="room-number">LAB 3</span></td> 
+            </tr>
+           
+            <tr>
+                <td>10:30 - 11:00</td>
+            </tr>
+            
+            <tr>
+                <td>11:00 - 11:30</td>
+            </tr>
+           
+            <tr>
+                <td>11:30 - 12:00</td>
+            </tr>
+            
+            <tr>
+                <td>12:00 - 12:30</td>
+                <td rowspan="2">&nbsp;</td> 
+                <td rowspan="2">&nbsp;</td> 
+        
+            </tr>
+           
+            <tr>
+                <td>12:30 - 1:00</td>
+            </tr>
+           
+            <tr>
+                <td>01:00 - 01:30</td>
+                <td rowspan="2" >&nbsp;</td> 
+                <td rowspan="3" class="course"><span class="class-name">CS 311</span><br><span class="room-number">102</span></td> 
+                <td rowspan="6" class="course"><span class="class-name">CS 312</span><br><span class="room-number">ITL</span></td> 
+                <td rowspan="2">&nbsp;</td>
+                
+            </tr>
+            
+            <tr>
+                <td>01:30 - 02:00</td>
+            </tr>
+            
+            <tr>
+                <td>02:00 - 02:30</td>
+                <td rowspan="4" class="course"><span class="class-name">IT 314</span><br><span class="room-number">101</span></td> 
+                <td rowspan="3" class="course"><span class="class-name">CS 311</span><br><span class="room-number">102</span></td> 
+            </tr>
+            
+            <tr>
+                <td>02:30 - 03:00</td>
+                <td rowspan="3" class="course"><span class="class-name">GEd 104</span><br><span class="room-number">101</span></td> 
+            </tr>
+            
+            <tr>
+                <td>03:00 - 03:30</td>
+            </tr>
+            
+            <tr>
+                <td>03:30 - 04:00</td>
+                <td rowspan="4">&nbsp;</td> 
+            </tr>
+           
+            <tr>
+                <td>04:00 - 04:30</td>
+                <td rowspan="3" class="course"><span class="class-name">GEd 104</span><br><span class="room-number">102</span></td> 
+                <td rowspan="3">&nbsp;</td> 
+                <td rowspan="3">&nbsp;</td> 
+            </tr>
+            
+            <tr>
+                <td>04:30 - 05:00</td>
+            </tr>
+            
+            <tr>
+                <td>05:00 - 05:30</td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <footer>
+        <h3>Class codes and descriptions</h3>
+    <ul>
+      <li><b>CS 311</b>  : Automata Theory and Formal Languages</li>
+      <li><b>CS 312</b>  : Mobile Computing</li>
+      <li><b>IT 314</b>  : Web Systems and Technologies</li>
+      <li><b>IT 321</b>  : Human-Computer Interaction</li>
+      <li><b>IT 331</b>  : Application Development and Emerging Technologies</li>
+      <li><b>GED 104</b> : The Contemporary World</li>
+      <li><b>MATH 408</b>: Data Analysis</li>
+      
+    </ul>
+    </footer>
+
+</body>
+</html>
