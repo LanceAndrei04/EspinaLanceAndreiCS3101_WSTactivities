@@ -1,73 +1,71 @@
+const header = document.querySelector('.header');
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('.nav-links a');
 
-particlesJS("particles-js", {
-    particles: {
-        number: {
-            value: 80,   
-            density: {
-                enable: true,
-                value_area: 800
-            }
-        },
-        color: {
-            value: "#000000"  
-        },
-        shape: {
-            type: "polygon",  
-            stroke: {
-                width: 0,
-                color: "#000000"
-            },
-            polygon: {
-                nb_sides: 5
-            }
-        },
-        opacity: {
-            value: 0.5,  
-            random: true,
-            anim: {
-                enable: true,
-                speed: 1,
-                opacity_min: 0.1
-            }
-        },
-        size: {
-            value: 3,  
-            random: true,
-            anim: {
-                enable: true,
-                speed: 40,
-                size_min: 0.1
-            }
-        },
-        line_linked: {
-            enable: true,
-            distance: 150,  
-            color: "#000000",  
-            opacity: 0.4,
-            width: 1
-        },
-        move: {
-            enable: true,
-            speed: 3,
-            direction: "none",
-            random: true,
-            straight: false,
-            out_mode: "out",
-            bounce: false
+function updateActiveNavLink() {
+    let current = '';
+    
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (window.scrollY >= (sectionTop - header.clientHeight - 20)) {
+            current = section.getAttribute('id');
         }
-    },
-    interactivity: {
-        detect_on: "canvas",
-        events: {
-            onhover: {
-                enable: true,
-                mode: "repulse"  
-            },
-            onclick: {
-                enable: true,
-                mode: "push"  
-            }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
         }
-    },
-    retina_detect: true
+    });
+}
+
+window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 0);
+    updateActiveNavLink();
 });
+
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-links');
+
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('open');
+});
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('open');
+    });
+});
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    });
+});
+
+const observerOptions = {
+    threshold: 0.1
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('section').forEach(section => {
+    observer.observe(section);
+});
+
+updateActiveNavLink();
